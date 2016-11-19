@@ -1,4 +1,4 @@
-#include "log.h"
+#include <utils/log.h>
 
 struct logger_t
 {
@@ -98,9 +98,7 @@ bool log_open (int level, FILE *dest)
 
 void log (int level, char const * const fmt, ...)
 {
-     struct logger_t *iter = NULL;
-
-     iter = loggers;
+     struct logger_t *iter = loggers;
 
      do
      {

@@ -1,7 +1,8 @@
 #ifndef __BIOS_H
 #define __BIOS_H
 
-#include "cpu.h"
+#include <emu/cpu.h>
+#include <emu/ivt.h>
 
 /*! \brief BIOS Data Area (segment 40h) */
 struct bda_40h_t
@@ -111,6 +112,7 @@ struct bios_t
 {
      struct cpu_t *cpu;                 /*!< Associated CPU */
 
+     struct ivt_t *ivt;                 /*!< Pointer to the Interrupt Vector Table */
      struct bda_40h_t *bda_40h;         /*!< Pointer to the 40h segment */
 };
 

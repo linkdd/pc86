@@ -1,5 +1,5 @@
-#include "bios.h"
-#include "log.h"
+#include <emu/bios.h>
+#include <utils/log.h>
 
 struct bios_t *bios_start (struct cpu_t *cpu)
 {
@@ -21,8 +21,8 @@ struct bios_t *bios_start (struct cpu_t *cpu)
 
      bios->cpu = cpu;
 
-     /* retrieve the 40h segment */
-     bios->bda_40h = (struct bda_40h_t *) &(cpu->memory[0x40][0x0]);
+     bios->ivt     = (struct ivt_t     *) cpu_address (bios->cpu, 0x00, 0x00);
+     bios->bda_40h = (struct bda_40h_t *) cpu_address (bios->cpu, 0x40, 0x00);
 
      return bios;
 }

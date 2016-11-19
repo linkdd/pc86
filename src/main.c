@@ -14,8 +14,6 @@ void display_help (void)
 
 int main (int argc, char* argv[])
 {
-     char const * file_name = NULL;
-     
      /* Parameters parsing */
      int optidx = 0;
      int c      = 0;
@@ -46,8 +44,7 @@ int main (int argc, char* argv[])
 
      if (optind < argc)
      {
-          file_name = argv[optind++];
-          /* TODO: execute this file */
+          char *file_name = argv[optind++];
      }
      else
      {

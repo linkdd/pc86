@@ -1,7 +1,7 @@
 #ifndef __REGISTERS_H
 #define __REGISTERS_H
 
-#include "types.h"
+#include <emu/types.h>
 
 /*! \brief Describe 8086 registers */
 struct registers_t
@@ -24,6 +24,8 @@ struct registers_t
      int16_t ss;         /*!< Stack Segment */
 
      int16_t ip;         /*!< Instruction pointer */
+
+     flags_t flags;      /*!< Flags */
 };
 
 #endif /* __REGISTERS_H */
