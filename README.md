@@ -2,10 +2,8 @@
 
 Intel 8086 Emulator with IDE
 
+## Installation
 
-Usage:
-```
-mkdir bin && cd bin
-cmake ..
-```
-
+     $ mkdir __build__ && cd __build__
+     $ cmake ..
+     $ make
